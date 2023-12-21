@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "bda394c0-a3a5-4819-9e33-9f2282800bc8",
+		"name": "EGOChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26048147",
+		"_collection_link": "https://cloudy-trinity-594863.postman.co/workspace/Curso-JS---NodeJS~a815534b-f09e-4fa9-97af-25e40a3ad599/collection/26048147-bda394c0-a3a5-4819-9e33-9f2282800bc8?action=share&source=collection_link&creator=26048147"
+	},
+	"item": [
+		{
+			"name": "getAutos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "modelo",
+							"value": "a",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_host}}/api/autos",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAutos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set('auto_response_id',jsonData.auto.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anio\": 2022,\r\n        \"modelo\": \"Corsa 4\",\r\n        \"precio\": \"300000\",\r\n        \"tipo\": \"Auto\",\r\n        \"caracteristica\": \"Caracteristica\",\r\n        \"descripcion\": \"Descripcion\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_host}}/api/autos/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editAuto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"anio\": 2020,\r\n        \"modelo\": \"AAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n        \"precio\": \"4567891.00\",\r\n        \"tipo\": \"Auto\",\r\n        \"caracteristica\": \"Caracteristica\",\r\n        \"descripcion\": \"Descripcion\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_host}}/api/autos/{{auto_response_id}}/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos",
+						"{{auto_response_id}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delAuto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/autos/{{auto_response_id}}/",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos",
+						"{{auto_response_id}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAutoTipo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/autos?tipo=Auto",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "Auto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAutoMenorPrecio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/autos?precio=asc",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos"
+					],
+					"query": [
+						{
+							"key": "precio",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAutoMayorPrecio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/autos?precio=desc",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos"
+					],
+					"query": [
+						{
+							"key": "precio",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAutoMenorAnio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/autos?anio=asc",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos"
+					],
+					"query": [
+						{
+							"key": "anio",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAutoMayorAnio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Es JSON\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_host}}/api/autos?anio=desc",
+					"host": [
+						"{{local_host}}"
+					],
+					"path": [
+						"api",
+						"autos"
+					],
+					"query": [
+						{
+							"key": "anio",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_host",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "auto_response_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
