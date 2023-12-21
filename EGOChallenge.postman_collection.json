@@ -65,8 +65,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Codigo 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Codigo 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Es JSON\", function () {\r",
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"anio\": 2022,\r\n        \"modelo\": \"Corsa 4\",\r\n        \"precio\": \"300000\",\r\n        \"tipo\": \"Auto\",\r\n        \"caracteristica\": \"Caracteristica\",\r\n        \"descripcion\": \"Descripcion\"\r\n    }",
+					"raw": "{\r\n    \"anio\": 2020,\r\n    \"modelo\": \"Hilux\",\r\n    \"precio\": 1507000,\r\n    \"tipo\": \"PickUps\",\r\n    \"caracteristica\":\"caracteristica\",\r\n    \"descripcion\":\"descripcion\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -134,7 +134,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"anio\": 2020,\r\n        \"modelo\": \"AAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n        \"precio\": \"4567891.00\",\r\n        \"tipo\": \"Auto\",\r\n        \"caracteristica\": \"Caracteristica\",\r\n        \"descripcion\": \"Descripcion\"\r\n    }",
+					"raw": "{\r\n        \"anio\": 2020,\r\n        \"modelo\": \"Fiat Palio\",\r\n        \"precio\": \"4567891.00\",\r\n        \"tipo\": \"Auto\",\r\n        \"caracteristica\": \"Caracteristica\",\r\n        \"descripcion\": \"Descripcion\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -163,8 +163,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Codigo 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Codigo 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Es JSON\", function () {\r",

@@ -11,7 +11,8 @@ Bienvenido al repositorio de mi prueba técnica!
 7. Debe ingresa el comando en la consola de vsc "py manage.py runserver".
 
 Introducción:
-En esta prueba técnica desarrolle con Django Rest Framework. También le realicé pruebas con Postman.
+Para empezar a probar debe importar el archivo "EGOChallenge.postman_collection.json"
+En esta prueba técnica desarrolle el backend y la api con Django Rest Framework. También le realicé pruebas con Postman.
 
 En el archivo "EGOChallenge.postman_collection.json" están todas las llamadas a los distintos endpoints y tambien hay algunos test básicos.
 La idea es que importen este archivo a Postman y prueben cada uno de los endpoints.
